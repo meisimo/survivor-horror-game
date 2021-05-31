@@ -4,25 +4,30 @@ using UnityEngine;
 
 public class MainCharacterController : MonoBehaviour
 {
-
+    public SimpleShoot gun;
     private Animator animator;
+    private ShootController shootController;
 
     private void Awake() {
-        animator = GetComponent<Animator>();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+        animator        = GetComponent<Animator>();
+        shootController = GetComponentInChildren<ShootController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if( Input.GetButtonDown("Fire1") && gun.IsAvailableToShoot())
         {
-            animator.SetTrigger("Fire");
+            StartCoroutine(Shoot());
         }
     }
+
+    private IEnumerator Shoot()
+    {
+        animator.SetTrigger("Fire");
+        yield return new WaitForSecondsRealtime(0.05f);
+        gun.AnimateShoot();
+        shootController.Shoot();
+    }
+
 }

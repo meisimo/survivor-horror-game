@@ -9,7 +9,9 @@ public class SimpleShoot : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject casingPrefab;
     public GameObject muzzleFlashPrefab;
+    public float timeBeetweenShoots = .5f;
 
+    private bool isAvailableToShoot;
     [Header("Location Refrences")]
     [SerializeField] private Animator gunAnimator;
     [SerializeField] private Transform barrelLocation;
@@ -28,16 +30,28 @@ public class SimpleShoot : MonoBehaviour
 
         if (gunAnimator == null)
             gunAnimator = GetComponentInChildren<Animator>();
+
+        isAvailableToShoot = true;
     }
 
-    void Update()
+    public void AnimateShoot()
     {
-        //If you want a different input, change it here
-        if (Input.GetButtonDown("Fire1"))
-        {
-            //Calls animation on the gun that has the relevant animation events that will fire
-            gunAnimator.SetTrigger("Fire");
-        }
+        isAvailableToShoot = false;
+        gunAnimator.SetTrigger("Fire");
+        StartCoroutine(EnableToShootWithDelay());
+    }
+
+    public bool IsAvailableToShoot()
+    {
+        Debug.Log("IS AVAILABLE");
+        Debug.Log(isAvailableToShoot);
+        return isAvailableToShoot;
+    }
+
+    private IEnumerator EnableToShootWithDelay()
+    {
+        yield return new WaitForSecondsRealtime(timeBeetweenShoots);
+        isAvailableToShoot = true;
     }
 
 

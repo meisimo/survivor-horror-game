@@ -54,8 +54,13 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Nokobot\Modern Guns - Handgun\_Demo Assets\SimpleShoot.cs" />
+     <Compile Include="Assets\Scripts\Dieble.cs" />
      <Compile Include="Assets\Scripts\MainCharacterController.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\Shootable.cs" />
+     <Compile Include="Assets\Scripts\ShootController.cs" />
+     <Compile Include="Assets\Scripts\ZombieController.cs" />
+     <Compile Include="Assets\Scripts\ZombieDie.cs" />
      <None Include="Assets\Nokobot\Modern Guns - Handgun\README.txt" />
  <Reference Include="UnityEngine.Purchasing">
  <HintPath>C:/Users/silva/Unity/survivor-horror-game/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
