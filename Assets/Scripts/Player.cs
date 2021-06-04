@@ -31,15 +31,4 @@ public class Player : MonoBehaviour
         animator.SetFloat("VelY",moveVertical);
     }
 
-    /*void FixedUpdate(){
-        //moveHosizontal = movimiento hacia los lados, moveHosizontal = movimiento de arriba y abajo
-        float moveHorizontal = Input.GetAxis("Horizontal"); 
-        float moveVertical   = Input.GetAxis("Vertical"); 
-
-        //Vector3 es un tipo de dato propio de unity y se utiliza para dar coordenadas en 3D
-        //movimiento = tendra internamente tres componentes
-        //                                      X            Y       Z             
-        Vector3 movimiento = new Vector3 (moveHorizontal, 0.0f, moveVertical);
-        rb.AddForce (movimiento * speed);
-    }*/
 }

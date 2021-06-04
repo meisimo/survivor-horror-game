@@ -54,6 +54,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\Tiempo.cs" />
+     <None Include="Assets\SkySerie Freebie\Hdri setup.txt" />
  <Reference Include="UnityEngine.Purchasing">
  <HintPath>C:/Users/LAURA/Documents/KONRAD/Aplicaciones interactivas Multimedia/ProyectoFinal/survivor-horror-game-main/survivor-horror/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
  </Reference>
