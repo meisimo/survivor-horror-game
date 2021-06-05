@@ -112,6 +112,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 97d3ab2f4dab827418f20be9996186ee, type: 2}
+--- !u!4 &312220578 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1908678879059748051, guid: 41b56f84ff3097d418164410c4d6122c,
+    type: 3}
+  m_PrefabInstance: {fileID: 7566733299350775160}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &602001412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -704,6 +710,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1908678879059748051, guid: 41b56f84ff3097d418164410c4d6122c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7566733297777295566, guid: 41b56f84ff3097d418164410c4d6122c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7566733297777295566, guid: 41b56f84ff3097d418164410c4d6122c,
+        type: 3}
+      propertyPath: m_Cam
+      value: 
+      objectReference: {fileID: 312220578}
+    - target: {fileID: 7566733297777336554, guid: 41b56f84ff3097d418164410c4d6122c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7566733297779450792, guid: 41b56f84ff3097d418164410c4d6122c,
         type: 3}
       propertyPath: m_Material

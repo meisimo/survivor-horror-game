@@ -7,8 +7,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
     [RequireComponent(typeof (ThirdPersonCharacter))]
     public class ThirdPersonUserControl : MonoBehaviour
     {
+        public Transform m_Cam;                  // A reference to the main camera in the scenes transform
+
         private ThirdPersonCharacter m_Character; // A reference to the ThirdPersonCharacter on the object
-        private Transform m_Cam;                  // A reference to the main camera in the scenes transform
         private Vector3 m_CamForward;             // The current forward direction of the camera
         private Vector3 m_Move;
         private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
@@ -17,11 +18,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private void Start()
         {
             // get the transform of the main camera
-            if (Camera.main != null)
+            if (m_Cam == null && Camera.main != null)
             {
                 m_Cam = Camera.main.transform;
             }
-            else
+            else if (m_Cam == null)
             {
                 Debug.LogWarning(
                     "Warning: no main camera found. Third person character needs a Camera tagged \"MainCamera\", for camera-relative controls.", gameObject);

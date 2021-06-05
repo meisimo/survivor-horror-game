@@ -77,7 +77,7 @@ namespace UnityStandardAssets.Cameras
             var y = CrossPlatformInputManager.GetAxis("Mouse Y");
 
             // Adjust the look angle by an amount proportional to the turn speed and horizontal input.
-            m_LookAngle += x*m_TurnSpeed;
+            m_LookAngle = Mathf.Clamp( m_LookAngle + x * m_TurnSpeed, -45, 45);
 
             // Rotate the rig (the root object) around Y axis only:
             m_TransformTargetRot = Quaternion.Euler(0f, m_LookAngle, 0f);
