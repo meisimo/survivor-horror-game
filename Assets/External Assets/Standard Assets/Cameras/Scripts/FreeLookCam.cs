@@ -107,7 +107,7 @@ namespace UnityStandardAssets.Cameras
 			}
 			else
 			{
-				m_Pivot.localRotation = m_PivotTargetRot;
+				m_Pivot.localRotation   = m_PivotTargetRot;
 				transform.localRotation = m_TransformTargetRot;
 			}
         }
