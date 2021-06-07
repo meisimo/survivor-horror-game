@@ -43,8 +43,6 @@ public class SimpleShoot : MonoBehaviour
 
     public bool IsAvailableToShoot()
     {
-        Debug.Log("IS AVAILABLE");
-        Debug.Log(isAvailableToShoot);
         return isAvailableToShoot;
     }
 

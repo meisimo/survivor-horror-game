@@ -195,9 +195,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Target: {fileID: 0}
-  m_AutoTargetPlayer: 1
+  m_AutoTargetPlayer: 0
   m_UpdateType: 0
-  m_MoveSpeed: 1
+  m_MoveSpeed: 0
   m_TurnSpeed: 1.5
   m_TurnSmoothing: 0
   m_TiltMax: 10
@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: 7566733297779450792}
   - component: {fileID: 7566733297777295566}
   - component: {fileID: 7566733297777336554}
-  - component: {fileID: 7566733297784335273}
+  - component: {fileID: 77775498055397343}
   m_Layer: 0
   m_Name: Laura
   m_TagString: Untagged
@@ -315,7 +315,7 @@ Transform:
   m_GameObject: {fileID: 7566733297784335272}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7566733299364865987}
   - {fileID: 7566733299247587350}
@@ -384,7 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 521b611700410be45810047f0a74e899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Cam: {fileID: 0}
+  m_Cam: {fileID: 1908678879059748051}
 --- !u!114 &7566733297777336554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,7 +405,7 @@ MonoBehaviour:
   m_MoveSpeedMultiplier: 1
   m_AnimSpeedMultiplier: 1
   m_GroundCheckDistance: 1.25
---- !u!114 &7566733297784335273
+--- !u!114 &77775498055397343
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -414,7 +414,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7566733297784335272}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0667207a10bee744e897e7bcfbcb78fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 0421d5ee997fe4f47ab99026a9fae8be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gun: {fileID: 5940324182029494825}
@@ -427,7 +427,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7566733299247587350}
-  - component: {fileID: 7566733299247587351}
+  - component: {fileID: 3228644294419151457}
   m_Layer: 0
   m_Name: ShootPoint
   m_TagString: Untagged
@@ -450,7 +450,7 @@ Transform:
   m_Father: {fileID: 7566733297784086060}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7566733299247587351
+--- !u!114 &3228644294419151457
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -459,7 +459,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7566733299247587349}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0785aa737a44b9c48bae083c23d25031, type: 3}
+  m_Script: {fileID: 11500000, guid: ea0c0736708c0954da4317038e62ea93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 843883681}
