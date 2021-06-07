@@ -14,6 +14,7 @@ public class ZombieController : MonoBehaviour, Shootable, EnemyWithEyes
     private float reactToShootDelay      = 0.01f;
     private EnemyEyesController enemyEyes;
     private GameObject          target;
+    private PatrollingController patrolling;
 
     private void Awake() {
         lifePoints = 3;
@@ -27,13 +28,17 @@ public class ZombieController : MonoBehaviour, Shootable, EnemyWithEyes
         animator          = GetComponent<Animator>();
         die               = GetComponent<ZombieDie>();
 
+        patrolling        = GetComponent<PatrollingController>();
+
         fleshExplotion.Stop();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (enemyEyes.targetDetected)
         {
+            if (patrolling.IsPAtrolling())
+                patrolling.StopPatrollingForAWhile();
             TargetPursuit(target);
         }
         else if(pursuitBehavior.IsInPursuit())

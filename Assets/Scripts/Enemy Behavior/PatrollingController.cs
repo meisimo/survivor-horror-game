@@ -17,12 +17,14 @@ public class PatrollingController : MonoBehaviour
     private PatrollingPointController currentTarget;
     private int currentTargetI;
     private bool isWalking;
+    private bool isPatrolling;
 
     private void Awake()
     {
         nav      = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         zombie   = GetComponent<ZombieController>();
+        isPatrolling = true;
 
         currentTargetI = 0;
         nav.speed = patrollingSpeed;
@@ -37,6 +39,9 @@ public class PatrollingController : MonoBehaviour
 
     void Update()
     {
+        if(!isPatrolling)
+            return;
+
         if (isWalking && zombie.IsAlive()) {
             if(isAwayFromTarget())
             {
@@ -97,4 +102,20 @@ public class PatrollingController : MonoBehaviour
         SetWalking(false);
     }
 
+    private IEnumerator StartPatrollingWithDelay()
+    {
+        yield return new WaitForSecondsRealtime(1f);
+        isPatrolling = true;
+    }
+
+    public void StopPatrollingForAWhile()
+    {
+        isPatrolling = false;
+        StartPatrollingWithDelay();
+    }
+
+    public bool IsPAtrolling()
+    {
+        return isPatrolling;
+    }
 }
