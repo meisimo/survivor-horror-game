@@ -5,21 +5,23 @@ using UnityEngine.UI;
 
 public class LifePoints : MonoBehaviour
 {
-    private Text LifeText;
+    private Text lifeText;
     private int points;
 
     private void Awake()
     {
-        LifeText = GetComponent<Text>();
+        if (lifeText == null)
+            lifeText = GetComponent<Text>();
     }
 
     private void RefreshLifeText()
     {
-        LifeText.text = "Salud: " + this.points;
+        lifeText.text = "Salud: " + this.points;
     }
 
     public void InitPoints(int points)
     {
+        lifeText = GetComponent<Text>();
         this.points = points;
         RefreshLifeText();
     }
