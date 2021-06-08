@@ -35,7 +35,7 @@ public class ZombieController : MonoBehaviour, Shootable, EnemyWithEyes
 
     private void Update()
     {
-        if (enemyEyes.targetDetected)
+        if (enemyEyes.targetDetected && !target.GetComponent<Dieble>().IsDead() )
         {
             if (patrolling.IsPAtrolling())
                 patrolling.StopPatrollingForAWhile();

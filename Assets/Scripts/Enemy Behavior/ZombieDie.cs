@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class ZombieDie : MonoBehaviour, Dieble
 {
+    static int pointByDying = 5;
+
     private NavMeshAgent nav;
     private bool frontShootImpact;
     private float desapearDelay = 10f;
@@ -24,11 +26,15 @@ public class ZombieDie : MonoBehaviour, Dieble
 
     public void Die()
     {
-        isDead = true;
-        nav.SetDestination(transform.position);
-        animator.SetBool("Front shoot", frontShootImpact);
-        animator.SetBool("Die", true);
-        StartCoroutine(DesapearAfterDie(desapearDelay));
+        if(!IsDead())
+        {
+            isDead = true;
+            nav.SetDestination(transform.position);
+            animator.SetBool("Front shoot", frontShootImpact);
+            animator.SetBool("Die", true);
+            StartCoroutine(DesapearAfterDie(desapearDelay));
+            LevelManagerController.IncreasePoints(5);
+        }
     }
 
     public IEnumerator DesapearAfterDie(float delay){

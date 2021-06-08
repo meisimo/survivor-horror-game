@@ -389,7 +389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeetweenAttacks: 1.75
-  distanceToAttack: 0
+  distanceToAttack: 0.1
   enemyWeapon: {fileID: 8984030388325413200}
 --- !u!114 &6898304838072365425
 MonoBehaviour:
@@ -1259,6 +1259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  damageDelay: 0
 --- !u!65 &850852178
 BoxCollider:
   m_ObjectHideFlags: 0
