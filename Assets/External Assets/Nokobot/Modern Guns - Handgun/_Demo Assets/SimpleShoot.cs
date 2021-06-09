@@ -42,7 +42,7 @@ public class SimpleShoot : MonoBehaviour
 
     public void AnimateShoot()
     {
-        munitionText.RefreshMunitionText(munition--);
+        munitionText.RefreshMunitionText(--munition);
         isAvailableToShoot = false;
         gunAnimator.SetTrigger("Fire");
         StartCoroutine(EnableToShootWithDelay());
