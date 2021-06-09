@@ -5,11 +5,11 @@ using UnityEngine;
 public class ObjectDestruction : MonoBehaviour, Shootable
 {
     public int pointsByDestruction;
+    public int resistancePoints;
     public float delayForDestruction;
     public float destructionAnimationDuration;
     public float delayForImpact;
     public float impactAnimationDuration;
-    public int resistancePoints;
     public ParticleSystem impactParticleSystem;
     public ParticleSystem destructionParticleSystem;
 

@@ -10,6 +10,7 @@ public class ExtinguishableFire : MonoBehaviour
 {
     public ParticleSystem fireParticleSystem;
     public ParticleSystem smokeParticleSystem;
+    public Collider invisibleBlocker;
 
     protected bool m_isExtinguished;
 
@@ -23,6 +24,10 @@ public class ExtinguishableFire : MonoBehaviour
         fireParticleSystem.Stop();
 
         StartCoroutine(StartingFire());
+    }
+
+    private void OnParticleCollision(GameObject other) {
+        Extinguish();
     }
 
     public void Extinguish()
@@ -39,6 +44,7 @@ public class ExtinguishableFire : MonoBehaviour
         fireParticleSystem.Stop();
         smokeParticleSystem.time = 0;
         smokeParticleSystem.Play();
+        invisibleBlocker.enabled = false;
 
         float elapsedTime = 0.0f;
         while (elapsedTime < m_FireStartingTime)
@@ -82,5 +88,6 @@ public class ExtinguishableFire : MonoBehaviour
 
         fireParticleSystem.transform.localScale = Vector3.one;
         m_isExtinguished = false;
+        invisibleBlocker.enabled = true;
     }
 }
