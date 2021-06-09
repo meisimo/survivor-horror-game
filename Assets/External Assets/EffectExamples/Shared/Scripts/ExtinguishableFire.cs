@@ -63,7 +63,7 @@ public class ExtinguishableFire : MonoBehaviour
         smokeParticleSystem.Stop();
         fireParticleSystem.transform.localScale = Vector3.one;
 
-        yield return new WaitForSeconds(4.0f);
+        yield return new WaitForSeconds(10.0f);
 
         StartCoroutine(StartingFire());
     }

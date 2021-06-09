@@ -374,7 +374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f12d08627b10c5e4fb65d11acf70317a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pursuitSpeed: 3
+  pursuitSpeed: 5
   minimalDistanceToTarget: 0.7875
 --- !u!114 &8145112623903500285
 MonoBehaviour:
@@ -403,7 +403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc364547bcb7c5439710e4e7b187cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetDistance: 0.1
+  targetDistance: 0.5
   patrollingSpeed: 0.7
   targets:
   - {fileID: 0}
@@ -2580,6 +2580,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866532409713070096, guid: 0a217304875c71246ab91e8f21301f53,
+        type: 3}
+      propertyPath: m_Radius
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 663471093447214879, guid: 0a217304875c71246ab91e8f21301f53, type: 3}
