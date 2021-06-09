@@ -12,11 +12,15 @@ public class ObjectDestruction : MonoBehaviour, Shootable
     public float impactAnimationDuration;
     public ParticleSystem impactParticleSystem;
     public ParticleSystem destructionParticleSystem;
+    public AudioClip explotion;
 
     private int remainingResistance;
     private bool exists;
 
+    private AudioSource source;
+
     private void Awake() {
+        source = GetComponent<AudioSource>();
         remainingResistance = resistancePoints;
         impactParticleSystem.Stop();
         destructionParticleSystem.Stop();
@@ -31,6 +35,7 @@ public class ObjectDestruction : MonoBehaviour, Shootable
     private IEnumerator Destruction()
     {
         LevelManagerController.IncreasePoints(pointsByDestruction);
+        source.PlayOneShot(explotion);
         yield return new WaitForSecondsRealtime(delayForDestruction);
         GetComponent<MeshCollider>().enabled = false;
         GetComponent<MeshRenderer>().enabled = false;
@@ -42,6 +47,7 @@ public class ObjectDestruction : MonoBehaviour, Shootable
 
     private IEnumerator Impact(Vector3 shootPoint)
     {
+        source.Play();
         yield return new WaitForSecondsRealtime(delayForImpact);
         impactParticleSystem.transform.position = shootPoint;
         impactParticleSystem.transform.forward  = (shootPoint - transform.position).normalized;

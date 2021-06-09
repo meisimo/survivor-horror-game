@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class ZombieController : MonoBehaviour, Shootable, EnemyWithEyes
 {
+    public AudioClip          attackSound;
+    public AudioClip          hurt;
+
+    private bool attackSouning;
+    private bool breathSouning;
     private AttackingBehavior attackingBehavior;
     private PursuitBehavior   pursuitBehavior;
     private ParticleSystem fleshExplotion;
@@ -15,6 +20,7 @@ public class ZombieController : MonoBehaviour, Shootable, EnemyWithEyes
     private EnemyEyesController enemyEyes;
     private GameObject          target;
     private PatrollingController patrolling;
+    private AudioSource          source;
 
     private void Awake() {
         lifePoints = 3;
@@ -31,6 +37,7 @@ public class ZombieController : MonoBehaviour, Shootable, EnemyWithEyes
         patrolling        = GetComponent<PatrollingController>();
 
         fleshExplotion.Stop();
+        source = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -44,6 +51,34 @@ public class ZombieController : MonoBehaviour, Shootable, EnemyWithEyes
         else if(pursuitBehavior.IsInPursuit())
         {
             pursuitBehavior.StopPursuit();
+        }
+
+        if (enemyEyes.playerIsNear())
+        {
+            if (pursuitBehavior.IsInPursuit())
+            {
+                if (!attackSouning)
+                {
+                    source.PlayOneShot(attackSound);
+                    attackSouning = true;
+                    breathSouning = false;
+                }
+            }
+            else 
+            {
+                if (!breathSouning)
+                {
+                    source.Play();
+                    attackSouning = false;
+                    breathSouning = true;
+                }
+            }
+        }
+        else if(source.isPlaying || !IsAlive())
+        {
+            source.Stop();
+            attackSouning = false;
+            breathSouning = false;
         }
     }
 
@@ -81,6 +116,7 @@ public class ZombieController : MonoBehaviour, Shootable, EnemyWithEyes
         lifePoints--;
         StartCoroutine(FleshExplotionAnimation(impactPoint));
         StartCoroutine(GetShootAnimation());
+        source.PlayOneShot(hurt);
         
         if (lifePoints <= 0){
             die.SetFrontShoot(ShootImpactInFront(impactPoint));

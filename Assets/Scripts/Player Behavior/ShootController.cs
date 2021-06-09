@@ -15,11 +15,13 @@ public class ShootController : MonoBehaviour
     Vector3 sightOnTargetPosition;
     private int shootableMask;
     private float timer;
+    private AudioSource audioSource;
 
     private void Awake()
     {
         shootableMask = LayerMask.GetMask("Shootable");
         sightInTarget.SetActive(false);
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Start is called before the first frame update
@@ -68,6 +70,7 @@ public class ShootController : MonoBehaviour
 
     public void Shoot()
     {
+        audioSource.Play();
         if (targetOnSight)
         {
             targetOnSight.GetComponent<Shootable>()?.GetShoot(sightOnTargetPosition);

@@ -100,4 +100,9 @@ public class EnemyEyesController : MonoBehaviour
 
     }
 
+    public bool playerIsNear()
+    {
+        return playerInsideSphere;
+    }
+
 }
