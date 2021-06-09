@@ -70,7 +70,7 @@ public class ShootController : MonoBehaviour
     {
         if (targetOnSight)
         {
-            targetOnSight.GetComponent<Shootable>().GetShoot(sightOnTargetPosition);
+            targetOnSight.GetComponent<Shootable>()?.GetShoot(sightOnTargetPosition);
         }
         else
         {

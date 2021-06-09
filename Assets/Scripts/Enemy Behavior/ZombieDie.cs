@@ -28,6 +28,9 @@ public class ZombieDie : MonoBehaviour, Dieble
     {
         if(!IsDead())
         {
+            GetComponent<NavMeshAgent>().SetDestination(transform.position);
+            GetComponent<CapsuleCollider>().enabled = false;
+
             isDead = true;
             nav.SetDestination(transform.position);
             animator.SetBool("Front shoot", frontShootImpact);
