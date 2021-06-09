@@ -306,6 +306,7 @@ MonoBehaviour:
   muzzleFlashPrefab: {fileID: 1782395880954752, guid: 3dd9cf2e209c504448f1c4c6835675cf,
     type: 3}
   timeBeetweenShoots: 0.5
+  munitionText: {fileID: 0}
   gunAnimator: {fileID: 5096255720411825929}
   barrelLocation: {fileID: 6797676991153694481}
   casingExitLocation: {fileID: 2621334888206066524}
@@ -645,7 +646,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6793951226313140459}
   m_Layer: 0
-  m_Name: M1911 Handgun_Silver (Shooting)
+  m_Name: Silver Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

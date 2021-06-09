@@ -61,6 +61,11 @@ public class MainCharacterController : MonoBehaviour, Attackable, Dieble
         return !isAlive;
     }
 
+    public void LoadMunition(int munition)
+    {
+        gun.IncreaseMunition(munition);
+    }
+
     public void Die()
     {
         StartCoroutine(TransformCollider());

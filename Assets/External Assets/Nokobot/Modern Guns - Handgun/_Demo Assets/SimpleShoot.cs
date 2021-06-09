@@ -10,8 +10,12 @@ public class SimpleShoot : MonoBehaviour
     public GameObject casingPrefab;
     public GameObject muzzleFlashPrefab;
     public float timeBeetweenShoots = .5f;
+    public Munitions munitionText;
 
+    private const int initialMunition = 30;
+    private int munition;
     private bool isAvailableToShoot;
+
     [Header("Location Refrences")]
     [SerializeField] private Animator gunAnimator;
     [SerializeField] private Transform barrelLocation;
@@ -32,10 +36,13 @@ public class SimpleShoot : MonoBehaviour
             gunAnimator = GetComponentInChildren<Animator>();
 
         isAvailableToShoot = true;
+        munition           = initialMunition;
+        munitionText.RefreshMunitionText(munition);
     }
 
     public void AnimateShoot()
     {
+        munitionText.RefreshMunitionText(munition--);
         isAvailableToShoot = false;
         gunAnimator.SetTrigger("Fire");
         StartCoroutine(EnableToShootWithDelay());
@@ -43,7 +50,7 @@ public class SimpleShoot : MonoBehaviour
 
     public bool IsAvailableToShoot()
     {
-        return isAvailableToShoot;
+        return isAvailableToShoot && 0 < munition;
     }
 
     private IEnumerator EnableToShootWithDelay()
@@ -92,6 +99,12 @@ public class SimpleShoot : MonoBehaviour
 
         //Destroy casing after X seconds
         Destroy(tempCasing, destroyTimer);
+    }
+
+    public void IncreaseMunition(int amount)
+    {
+        munition += amount;
+        munitionText.RefreshMunitionText(munition);
     }
 
 }
