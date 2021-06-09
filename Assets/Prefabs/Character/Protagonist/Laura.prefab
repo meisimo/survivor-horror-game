@@ -246,7 +246,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486087927}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 5}
+  m_LocalPosition: {x: 0, y: 0, z: 10.88}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children:
   - {fileID: 4453577446944050369}
@@ -419,6 +419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gun: {fileID: 5940324182029494825}
   delayToTransformCollider: 2.25
+  lifePointsText: {fileID: 0}
 --- !u!1 &7566733299247587349
 GameObject:
   m_ObjectHideFlags: 0

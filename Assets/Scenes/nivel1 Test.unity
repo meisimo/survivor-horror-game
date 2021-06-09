@@ -272,6 +272,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie Girl
       objectReference: {fileID: 0}
+    - target: {fileID: 3427624514168647854, guid: 8000e3a72627b124d818a1147dab4336,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3427624514168647861, guid: 8000e3a72627b124d818a1147dab4336,
         type: 3}
       propertyPath: targets.Array.data[0]
@@ -3356,20 +3361,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 77775498055397343, guid: 41b56f84ff3097d418164410c4d6122c,
+        type: 3}
+      propertyPath: lifePointsText
+      value: 
+      objectReference: {fileID: 4787943771180478852}
+    - target: {fileID: 77775498055397343, guid: 41b56f84ff3097d418164410c4d6122c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7566733297784086060, guid: 41b56f84ff3097d418164410c4d6122c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -36.56
+      value: -47.616
       objectReference: {fileID: 0}
     - target: {fileID: 7566733297784086060, guid: 41b56f84ff3097d418164410c4d6122c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.59
+      value: -1.036
       objectReference: {fileID: 0}
     - target: {fileID: 7566733297784086060, guid: 41b56f84ff3097d418164410c4d6122c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -58.85
+      value: -114.946
       objectReference: {fileID: 0}
     - target: {fileID: 7566733297784086060, guid: 41b56f84ff3097d418164410c4d6122c,
         type: 3}
@@ -3529,11 +3544,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011105972888, guid: 1ccb1d3d3e429bb4bab387f3e489bfbe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.949631
+      value: 11.91
       objectReference: {fileID: 0}
     - target: {fileID: 4000011105972888, guid: 1ccb1d3d3e429bb4bab387f3e489bfbe, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.482903
+      value: 22.578
       objectReference: {fileID: 0}
     - target: {fileID: 4000011105972888, guid: 1ccb1d3d3e429bb4bab387f3e489bfbe, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3569,15 +3584,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011105972888, guid: 1ccb1d3d3e429bb4bab387f3e489bfbe, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3.8027408
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4000011105972888, guid: 1ccb1d3d3e429bb4bab387f3e489bfbe, type: 3}
       propertyPath: m_LocalScale.z
-      value: 4.709457
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 4000011105972888, guid: 1ccb1d3d3e429bb4bab387f3e489bfbe, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.6846473
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ccb1d3d3e429bb4bab387f3e489bfbe, type: 3}
@@ -5671,5 +5686,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: GUI
       objectReference: {fileID: 0}
+    - target: {fileID: 4787943772740890521, guid: b9cec27a75c5abb4a87bf21ad965c4e5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9cec27a75c5abb4a87bf21ad965c4e5, type: 3}
+--- !u!114 &4787943771180478852 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6118500609966332440, guid: b9cec27a75c5abb4a87bf21ad965c4e5,
+    type: 3}
+  m_PrefabInstance: {fileID: 4787943771180478851}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5625debb1c49e2e4fbf2281660d3154d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
